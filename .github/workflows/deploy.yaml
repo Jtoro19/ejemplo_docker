@@ -33,7 +33,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_IP }}
           username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.AWS_ACCESS_PEM }}  # Corrige esto si era "ACCES"
+          key: ${{ secrets.AWS_ACCESS_PEM }}
           script: |
             echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GH_USERNAME }} --password-stdin
             docker pull ghcr.io/${{ secrets.GH_USERNAME }}/fastapi-app:latest
